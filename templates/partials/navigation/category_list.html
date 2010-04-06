@@ -1,0 +1,15 @@
+<p class="category col two"><em>@title</em></p>
+<ul class="project-list col seven">
+foreach $children do
+	<li>
+		<div class="thumbnail col two">
+			<a href="@url"><img src="@thumb" alt=""></a>
+		</div>
+		<div class="summary col two">
+			<p><a href="@url">@title</a></p>
+			<p><em>@date</em></p>
+			<p><em class="background">&ndash; @keywords</em></p>
+		</div>
+	</li>
+endforeach
+</ul>
