@@ -1,4 +1,4 @@
-foreach $children do
-  :sitemap-url
-  :sitemap-children
-endforeach
+{% for child in page.root %}
+  {% include 'partials/sitemap/sitemap-url.xml' %}
+  {% include 'partials/sitemap/sitemap-url.xml' %}
+{% endfor %}
