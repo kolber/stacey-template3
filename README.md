@@ -1,4 +1,4 @@
-# Stacey - Template2 v3.0.0
+# Stacey - Template3 v3.0.0
 
 This is the third stacey template. Revised for Stacey v3.0.0 
 You can download it manually from <https://github.com/pbatts/stacey-template3>
