@@ -19,4 +19,4 @@ Or the main stacey repo at <http://github.com/kolber/stacey>.
 
 ## Copyright/License
 
-Copyright (c) 2014 Paul Batts. See `LICENSE` for details.
+Copyright (c) 2014-2016 Paul Batts. See `LICENSE` for details.
