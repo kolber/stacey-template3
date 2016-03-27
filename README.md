@@ -1,8 +1,12 @@
 # Stacey - Template3 v3.0.0
 
-This is the third stacey template. Revised for Stacey v3.0.0 
-You can download it manually from <https://github.com/pbatts/stacey-template3>
-See Demo at <http://guitdev.com/stacey-template3>
+This is the third Stacey template. Updated to Stacey v3.0.0
+
+You can download it manually from <https://github.com/pbatts/stacey-template3>.
+
+## Demo
+
+<http://guitdev.com/stacey-template3>
 
 ## Installation
 
@@ -11,7 +15,7 @@ Replace the `content`, `public` & `templates` folders from the default stacey v3
 ## Read More
 
 See <https://github.com/kolber/stacey/wiki> for more detailed usage information.  
-Or the main stacey repo at <http://github.com/kolber/stacey>
+Or the main stacey repo at <http://github.com/kolber/stacey>.
 
 ## Copyright/License
 
