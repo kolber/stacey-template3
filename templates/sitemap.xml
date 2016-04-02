@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  get "/" do
+  {% get page.root %}
   <url>
-      <loc>http://@base_url/</loc>
-      <lastmod>@updated</lastmod>
+      <loc>http://{{ page.base_url }}/</loc>
+      <lastmod>{{ page.updated }}</lastmod>
       <changefreq>monthly</changefreq>
       <priority>0.9</priority>
   </url>
-  end
-  foreach $root do
-    :sitemap-url
-    if $children do
-      :sitemap-children
-    endif
-  endforeach
+  {% endget %}
+{% for child in page.root %}
+    {% include 'partials/sitemap/sitemap-url.xml' %}
+    {% if child.children %}
+      {% include 'partials/sitemap/sitemap-children.xml' %}
+    {% {% endif %} %}
+  {% endfor %}
 </urlset>
