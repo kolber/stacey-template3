@@ -3,33 +3,36 @@
 <html>
 	<head>
 		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
-		<title>@title, @name's Portfolio</title>
-		<link rel="alternate" type="application/atom+xml" href="@root_path/?/feed/">
-		<link rel="stylesheet" href="@root_path/public/docs/css/screen.css" type="text/css" media="screen"> 
+		<title>{{page.name}}</title>
+		<link rel="alternate" type="application/atom+xml" href="{{ page.root_path }}/?/feed/">
+		<link rel="stylesheet" href="{{ page.root_path }}/public/docs/css/screen.css" type="text/css" media="screen">
 	</head>
 	<body>
 		<div id="container">
 			<h1 class="col two">
-				<a href="@root_path/">@name</a>
-				<em>@profession</em>
+				<a href="{{ page.root_path }}">{{page.name}}</a>
+				<em>{{page.profession}}</em>
 			</h1>
 			<h2 class="col two">
-				Selected Projects
-				<em>(2001—2009)</em>
+				Submitted projects
+				<em>(2001&ndash;{{page.current_year}})</em>
 			</h2>
-			<p class="col six"><em> :pages </em></p>
+			<p class="col six"><em> 
+				<!--{% include 'partials/navigation/pages.html' %}-->
+			    <a href="{{ page.root_path }}?/about">About</a>&nbsp;
+			    <a href="{{ page.root_path }}?/contact-me"/>Contact details</a> </em></p>
 			<hr>
 			<div id="content" class="col eight">
 				<p class="para col two"><em class="background">&para;</em></p>
 				<div class="description col six">
-					<h2><a href="@root_path">@title</a></h2>
-					:media
-					@content
+					<h2><a href="{{ page.root_path }}">{{page.title}}</a></h2>
+					{% include 'partials/assets/media.html' %}
+					{{ page.content }}
 				</div>
 			</div>
 			<hr>
-			<p id="footer" class="col six">&copy; Copyright @name @current_year <a class="atom-rss" href="@root_path/?/feed/">RSS</a><br>
-				<em>Content managed by <a href="http://www.staceyapp.com">Stacey</a></em></p>
+			<p id="footer" class="col six">This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>. <a class="atom-rss" href="{{ page.root_path }}?/feed/">RSS</a></br>
+				<em>Content managed by <a href="http://beta.staceyapp.com">Stacey</a></em></p>
 		</div>
 	</body>
 </html>

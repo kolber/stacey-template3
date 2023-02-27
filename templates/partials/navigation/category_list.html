@@ -1,15 +1,15 @@
-<p class="category col two"><em>@title</em></p>
+<p class="category col two"><em>{{ page.title }}</em></p>
 <ul class="project-list col seven">
-foreach $children do
+{% for child in page.root %}
 	<li>
 		<div class="thumbnail col two">
-			<a href="@url"><img src="@thumb" alt=""></a>
+			<a href="{{ child.thumb.url }}"><img src="{{ child.thumb.url }}" alt=""></a>
 		</div>
 		<div class="summary col two">
-			<p><a href="@url">@title</a></p>
-			<p><em>@date</em></p>
-			<p><em class="background">&ndash; @keywords</em></p>
+			<p> <a href="{{ child.url }}">{{ child.title }}</a></p>
+			<p><em>{{page.date}}</em></p>
+			<p><em class="background">&ndash; {{page.keywords}}</em></p>
 		</div>
 	</li>
-endforeach
+{% endfor %}
 </ul>

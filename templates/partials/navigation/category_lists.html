@@ -1,19 +1,19 @@
-foreach $root do
-  if $children do
-    <p class="category col two"><em>@title</em></p>
+{% for child in page.root %}
+  {% if child.children %}
+    <p class="category col two"><em>{{ child.title }}</em></p>
     <ul class="project-list col seven">
-    foreach $children do
-    	<li>
-    		<div class="thumbnail col two">
-    			<a href="@url"><img src="@thumb" alt=""></a>
-    		</div>
-    		<div class="summary col two">
-    			<p><a href="@url">@title</a></p>
-    			<p><em>@date</em></p>
-    			<p><em class="background">&ndash; @keywords</em></p>
-    		</div>
-    	</li>
-    endforeach
+    {% for child in child.children %}
+      <li>
+        <div class="thumbnail col two">
+          <a href="{{ child.thumb.url }}"><img src="{{ child.thumb.url }}" alt=""></a>
+        </div>
+        <div class="summary col two">
+          <p>  <a href="{{ child.url }}">{{ child.title }}</a></p>
+          <p><em>{{child.date}}</em></p>
+          <p><em class="background">&ndash;{{child.keywords}}</em></p>
+        </div>
+      </li>
+    {% endfor %}
     </ul>
-  endif
-endforeach
+  {% endif %}
+{% endfor %}
