@@ -1,5 +1,5 @@
-foreach $root do
-  if !$children do
-    <a href="@url">@title</a>,
-  endif
-endforeach
+{% for child in page.root %}
+  {% if child.children %}
+    <a href="{{ child.url }}">{{child.title}}</a>,
+  {% endif %}
+{% endfor %}
